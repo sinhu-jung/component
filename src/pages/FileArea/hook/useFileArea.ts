@@ -1,9 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 
-export function useFileArea() {
+export function useFileArea(
+  onDrop: (e:FileList) => void 
+) {
 
   const [dragActive, setDragActive] = useState<boolean>(false);
-  const inputRef = useRef<HTMLInputElement>(null);
 
   const handleDrag = function(e:React.DragEvent<HTMLFormElement | HTMLDivElement>) {
     e.preventDefault();
@@ -19,25 +20,17 @@ export function useFileArea() {
   const handleDrop = function(e: React.DragEvent<HTMLDivElement>) {
     e.preventDefault();
     e.stopPropagation();
-    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
-      // handleFiles(e.dataTransfer.files);
+    if (e.dataTransfer.files) {
+      onDrop(e.dataTransfer.files)
     }
 
     setDragActive(false);
   };
 
-    // triggers when file is selected with click
     const handleChange = function(e:React.ChangeEvent<HTMLInputElement>) {
       e.preventDefault();
       if (e.target.files && e.target.files[0]) {
         // handleFiles(e.target.files);
-      }
-    };
-    
-  // triggers the input when the button is clicked
-    const onButtonClick = () => {
-      if(inputRef.current) {
-      inputRef.current.click();
       }
     };
 
@@ -45,8 +38,6 @@ export function useFileArea() {
     handleDrag,
     handleDrop,
     handleChange,
-    onButtonClick,
     dragActive,
-    inputRef
   }
 }

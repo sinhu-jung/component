@@ -1,0 +1,47 @@
+.file_area_example {
+    width: 80%;
+    height: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    position: relative;
+
+    .example_content {
+        width: 100%;
+
+        .empty_file {
+            margin-left: 37%;
+            margin-top: 15%;
+            margin-bottom: 14%;
+        }
+
+    }
+
+    .file_view {
+        margin: 10px;
+        width: 97%;
+        height: 90%;
+        border: 1px solid gray;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: scroll;
+
+        .file {
+            margin: 5px;
+            height: 100%;
+        }
+
+    }
+
+    .upload_file_button {
+        background-color: #fff;
+        border: 1px solid gray;
+        border-radius: 5px;
+        padding: 5px 10px;
+        margin-left: 45%;
+        position: absolute;
+        bottom: 5px;
+        cursor: pointer;
+    }
+}

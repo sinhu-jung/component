@@ -2,6 +2,7 @@
   height: 16rem;
   width: 28rem;
   max-width: 100%;
+  overflow: hidden;
   text-align: center;
   position: relative;
 
@@ -14,28 +15,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-width: 2px;
-    border-radius: 1rem;
-    border-style: dashed;
-    border-color: #cbd5e1;
-    background-color: #f8fafc;
   }
   
   #label-file-upload.drag-active {
-    background-color: #ffffff;
-  }
-
-  .upload-button {
-    cursor: pointer;
-    padding: 0.25rem;
-    font-size: 1rem;
-    border: none;
-    font-family: 'Oswald', sans-serif;
-    background-color: transparent;
-  }
-
-  .upload-button:hover {
-    text-decoration-line: underline;
+    background-color: rgba(248, 250, 252, 0.7);
   }
   
   .drag-file-element {
